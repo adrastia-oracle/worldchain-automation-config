@@ -107,6 +107,7 @@ const config: AdrastiaConfig = {
                                 heartbeat: 30, // 30 seconds
                                 updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
                                 earlyUpdateTime: 15, // 15 seconds
+                                earlyUpdateThreshold: BIP_8D / 12n, // 0.083 bips, 0.00083%
                             },
                         },
                         {
@@ -117,6 +118,7 @@ const config: AdrastiaConfig = {
                                 heartbeat: 30, // 30 seconds
                                 updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
                                 earlyUpdateTime: 15, // 15 seconds
+                                earlyUpdateThreshold: BIP_8D / 12n, // 0.083 bips, 0.00083%
                             },
                         },
                         {
@@ -127,6 +129,7 @@ const config: AdrastiaConfig = {
                                 heartbeat: 30, // 30 seconds
                                 updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
                                 earlyUpdateTime: 15, // 15 seconds
+                                earlyUpdateThreshold: BIP_8D / 12n, // 0.083 bips, 0.00083%
                             },
                         },
                     ],
