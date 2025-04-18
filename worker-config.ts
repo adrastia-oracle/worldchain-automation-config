@@ -1,5 +1,7 @@
 import { AdrastiaConfig, BatchConfig } from "../../src/config/adrastia-config";
 
+const BIP_8D = 10000n; // 1 basis point in 8 decimal format
+
 const STD_WRITE_DELAY = 4_000; // Workers incrementally push updates with higher gas prices at 4-second intervals (2 blocks)
 
 const workerIndex = parseInt(process.env.ADRASTIA_WORKER_INDEX ?? "1");
@@ -102,9 +104,9 @@ const config: AdrastiaConfig = {
                             batch: 0,
                             extra: {
                                 desc: "ETH/USD",
-                                heartbeat: 60, // 1 minute
-                                updateThreshold: 10, // 10 bips, 0.1%
-                                earlyUpdateTime: 30, // 30 seconds
+                                heartbeat: 30, // 30 seconds
+                                updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
+                                earlyUpdateTime: 15, // 15 seconds
                             },
                         },
                         {
@@ -112,9 +114,9 @@ const config: AdrastiaConfig = {
                             batch: 0,
                             extra: {
                                 desc: "BTC/USD",
-                                heartbeat: 60, // 1 minute
-                                updateThreshold: 10, // 10 bips, 0.1%
-                                earlyUpdateTime: 30, // 30 seconds
+                                heartbeat: 30, // 30 seconds
+                                updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
+                                earlyUpdateTime: 15, // 15 seconds
                             },
                         },
                         {
@@ -122,9 +124,9 @@ const config: AdrastiaConfig = {
                             batch: 0,
                             extra: {
                                 desc: "WLD/USD",
-                                heartbeat: 60, // 1 minute
-                                updateThreshold: 10, // 10 bips, 0.1%
-                                earlyUpdateTime: 30, // 30 seconds
+                                heartbeat: 30, // 30 seconds
+                                updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
+                                earlyUpdateTime: 15, // 15 seconds
                             },
                         },
                     ],
