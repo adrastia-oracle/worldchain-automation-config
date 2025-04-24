@@ -66,8 +66,8 @@ const config: AdrastiaConfig = {
                 // Gas prices are incrementally scaled based on worker index
                 gasPriceMultiplierDividend: 100n + BigInt(workerIndex - 1) * 50n,
                 gasPriceMultiplierDivisor: 100n,
-                // Check for tx confirmations every 1s
-                confirmationPollingInterval: 1_000,
+                // Check for tx confirmations every 500ms on the primary and 1s on the others
+                confirmationPollingInterval: workerIndex === 1 ? 500 : 1_000,
                 // Wait up to 6 seconds for tx confirmations
                 transactionConfirmationTimeout: 6_000,
                 // Wait for 1 confirmation for the primary, and 2 for the others
