@@ -70,8 +70,8 @@ const config: AdrastiaConfig = {
                 confirmationPollingInterval: 1_000,
                 // Wait up to 6 seconds for tx confirmations
                 transactionConfirmationTimeout: 6_000,
-                // Wait for 2 confirmations
-                waitForConfirmations: 2,
+                // Wait for 1 confirmation for the primary, and 2 for the others
+                waitForConfirmations: workerIndex === 1 ? 1 : 2,
                 // Gas limit is hardcoded for the primary and secondary workers, others use the RPC to estimate gas
                 gasLimit: workerIndex <= 2 ? 1_000_000n : undefined,
             },
