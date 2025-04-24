@@ -10,8 +10,8 @@ const WORLDCHAIN_UPTIME_WEBHOOK_URL = process.env.WORLDCHAIN_UPTIME_WEBHOOK_URL;
 
 const STANDARD_BATCH_CONFIG: BatchConfig = {
     // Primary and secondary polls every 10ms (with caching)
-    // Tertiary every 2 seconds and others every 4 seconds (no caching)
-    pollingInterval: workerIndex <= 2 ? 10 : workerIndex == 3 ? 2_000 : 4_000,
+    // Tertiary every 1 seconds and others every 2 seconds (no caching)
+    pollingInterval: workerIndex <= 2 ? 10 : workerIndex == 3 ? 1_000 : 2_000,
     writeDelay: STD_WRITE_DELAY * (workerIndex - 1),
     logging: [
         process.env.DD_AGENT_LOGGING_ENABLED === "true"
@@ -83,9 +83,9 @@ const config: AdrastiaConfig = {
                     clientId: process.env.CHAINLINK_DATASTREAMS_MAINNET_CLIENT_ID,
                     clientSecret: process.env.CHAINLINK_DATASTREAMS_MAINNET_CLIENT_SECRET,
                 },
-                // With the primary and secondary, cache onchain data for 1 second to reduce load on the RPC (also invalidates after updates)
+                // With the primary and secondary, cache onchain data for 500ms to reduce load on the RPC (also invalidates after updates)
                 // With others, disable caching
-                onchainCacheTtl: workerIndex <= 2 ? 1_000 : undefined,
+                onchainCacheTtl: workerIndex <= 2 ? 500 : undefined,
             },
             uptimeWebhookUrl: WORLDCHAIN_UPTIME_WEBHOOK_URL,
             batches: {
