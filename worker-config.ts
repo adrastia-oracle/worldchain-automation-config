@@ -100,7 +100,7 @@ const config: AdrastiaConfig = {
                             extra: {
                                 desc: "ETH/USD",
                                 heartbeat: 30, // 30 seconds
-                                updateThreshold: (BIP_8D / 10n) * (workerIndex >= 2 ? 10n : 1n), // 0.1 bips, 0.001% (primary), 1 bips, 0.01% (others)
+                                updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
                                 earlyUpdateTime: 15, // 15 seconds
                                 earlyUpdateThreshold: BIP_8D / 20n, // 0.05 bips, 0.0005%
                             },
@@ -111,7 +111,7 @@ const config: AdrastiaConfig = {
                             extra: {
                                 desc: "BTC/USD",
                                 heartbeat: 30, // 30 seconds
-                                updateThreshold: (BIP_8D / 10n) * (workerIndex >= 2 ? 10n : 1n), // 0.1 bips, 0.001% (primary), 1 bips, 0.01% (others)
+                                updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
                                 earlyUpdateTime: 15, // 15 seconds
                                 earlyUpdateThreshold: BIP_8D / 20n, // 0.05 bips, 0.0005%
                             },
@@ -122,7 +122,7 @@ const config: AdrastiaConfig = {
                             extra: {
                                 desc: "WLD/USD",
                                 heartbeat: 30, // 30 seconds
-                                updateThreshold: (BIP_8D / 10n) * (workerIndex >= 2 ? 10n : 1n), // 0.1 bips, 0.001% (primary), 1 bips, 0.01% (others)
+                                updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
                                 earlyUpdateTime: 15, // 15 seconds
                                 earlyUpdateThreshold: BIP_8D / 20n, // 0.05 bips, 0.0005%
                             },
