@@ -46,10 +46,6 @@ const config: AdrastiaConfig = {
     chains: {
         worldChain: {
             txConfig: {
-                gasLimitMultiplier: {
-                    dividend: 2n,
-                    divisor: 1n,
-                },
                 transactionTimeout: STD_WRITE_DELAY * 2,
                 txType: 2,
                 eip1559: {
@@ -71,8 +67,8 @@ const config: AdrastiaConfig = {
                 transactionConfirmationTimeout: 6_000,
                 // Wait for 1 confirmation for the primary, and 2 for the others
                 waitForConfirmations: workerIndex === 1 ? 1 : 2,
-                // Gas limit is hardcoded for the primary and secondary workers, others use the RPC to estimate gas
-                gasLimit: workerIndex <= 2 ? 1_000_000n : undefined,
+                // Gas limit is hardcoded
+                gasLimit: 1_000_000n,
             },
             multicall2Address: MULTICALL3_ADDRESS,
             chainlinkDataStreams: {
