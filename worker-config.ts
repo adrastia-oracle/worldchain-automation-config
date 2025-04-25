@@ -64,7 +64,7 @@ const config: AdrastiaConfig = {
                     minPriorityFee: 250n,
                 },
                 // Gas prices are incrementally scaled based on worker index
-                gasPriceMultiplierDividend: 100n + BigInt(workerIndex - 1) * 50n,
+                gasPriceMultiplierDividend: 200n + BigInt(workerIndex - 1) * 50n,
                 gasPriceMultiplierDivisor: 100n,
                 // Check for tx confirmations every 500ms on the primary and 1s on the others
                 confirmationPollingInterval: workerIndex === 1 ? 500 : 1_000,
