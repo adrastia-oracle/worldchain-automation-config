@@ -59,7 +59,7 @@ const config: AdrastiaConfig = {
                     minPriorityFee: 250n,
                 },
                 // Gas prices are incrementally scaled based on worker index
-                gasPriceMultiplierDividend: 200n + BigInt(workerIndex - 1) * 50n,
+                gasPriceMultiplierDividend: 125n + BigInt(workerIndex - 1) * 50n,
                 gasPriceMultiplierDivisor: 100n,
                 // Check for tx confirmations every 500ms on the primary and 1s on the others
                 confirmationPollingInterval: workerIndex === 1 ? 500 : 1_000,
@@ -100,10 +100,10 @@ const config: AdrastiaConfig = {
                             batch: 0,
                             extra: {
                                 desc: "ETH/USD",
-                                heartbeat: 30, // 30 seconds
-                                updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
-                                earlyUpdateTime: 15, // 15 seconds
-                                earlyUpdateThreshold: BIP_8D / 20n, // 0.05 bips, 0.0005%
+                                heartbeat: 60, // 60 seconds
+                                updateThreshold: BIP_8D, // 1 bips, 0.01%
+                                earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
+                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n, // 8/10 bips, 0.008%
                             },
                         },
                         {
@@ -111,10 +111,10 @@ const config: AdrastiaConfig = {
                             batch: 0,
                             extra: {
                                 desc: "BTC/USD",
-                                heartbeat: 30, // 30 seconds
-                                updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
-                                earlyUpdateTime: 15, // 15 seconds
-                                earlyUpdateThreshold: BIP_8D / 20n, // 0.05 bips, 0.0005%
+                                heartbeat: 60, // 60 seconds
+                                updateThreshold: BIP_8D, // 1 bips, 0.01%
+                                earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
+                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n, // 8/10 bips, 0.008%
                             },
                         },
                         {
@@ -122,10 +122,21 @@ const config: AdrastiaConfig = {
                             batch: 0,
                             extra: {
                                 desc: "WLD/USD",
-                                heartbeat: 30, // 30 seconds
-                                updateThreshold: BIP_8D / 10n, // 0.1 bips, 0.001%
-                                earlyUpdateTime: 15, // 15 seconds
-                                earlyUpdateThreshold: BIP_8D / 20n, // 0.05 bips, 0.0005%
+                                heartbeat: 60, // 60 seconds
+                                updateThreshold: BIP_8D, // 1 bips, 0.01%
+                                earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
+                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n, // 8/10 bips, 0.008%
+                            },
+                        },
+                        {
+                            address: "0x00021f1c95b33f5e56fa5c07968c566586d0e6cea93c9fb79127915892de430d",
+                            batch: 0,
+                            extra: {
+                                desc: "ezETH/ETH",
+                                heartbeat: 60, // 60 seconds
+                                updateThreshold: BIP_8D, // 1 bips, 0.01%
+                                earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
+                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n, // 8/10 bips, 0.008%
                             },
                         },
                     ],
