@@ -69,6 +69,7 @@ const config: AdrastiaConfig = {
                 waitForConfirmations: workerIndex === 1 ? 1 : 2,
                 // Gas limit is hardcoded
                 gasLimit: 1_000_000n,
+                opGasPriceOracle: "0x420000000000000000000000000000000000000F", // Used for L1 fee calculation
             },
             multicall2Address: MULTICALL3_ADDRESS,
             chainlinkDataStreams: {
