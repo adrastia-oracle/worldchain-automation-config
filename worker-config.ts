@@ -1,7 +1,7 @@
 import { AdrastiaConfig, BatchConfig } from "../../src/config/adrastia-config";
 
 const BIP_8D = 10000n; // 1 basis point in 8 decimal format
-const BIP_8D_5 = BIP_8D * 5n; // 2.5 basis points in 8 decimal format
+const BIP_8D_5 = BIP_8D * 5n; // 5 basis points in 8 decimal format
 
 const STD_WRITE_DELAY = 4_000; // Workers incrementally push updates with higher gas prices at 4-second intervals (2 blocks)
 
