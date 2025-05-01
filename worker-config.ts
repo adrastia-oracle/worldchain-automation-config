@@ -4,7 +4,7 @@ const BIP_8D = 10000n; // 1 basis point in 8 decimal format
 const BIP_8D_10 = BIP_8D * 10n; // 10 basis points in 8 decimal format
 const BIP_8D_50 = BIP_8D * 50n; // 50 basis points in 8 decimal format
 
-const STD_WRITE_DELAY = 4_000; // Workers incrementally push updates with higher gas prices at 4-second intervals (2 blocks)
+const STD_WRITE_DELAY = 6_000; // Workers incrementally push updates with higher gas prices at 6-second intervals (3 blocks)
 
 const workerIndex = parseInt(process.env.ADRASTIA_WORKER_INDEX ?? "1");
 
