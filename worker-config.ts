@@ -1,6 +1,7 @@
 import { AdrastiaConfig, BatchConfig } from "../../src/config/adrastia-config";
 
 const BIP_8D = 10000n; // 1 basis point in 8 decimal format
+const BIP_8D_2_5 = (BIP_8D * 25n) / 10n; // 2.5 basis points in 8 decimal format
 
 const STD_WRITE_DELAY = 4_000; // Workers incrementally push updates with higher gas prices at 4-second intervals (2 blocks)
 
@@ -123,9 +124,9 @@ const config: AdrastiaConfig = {
                             extra: {
                                 desc: "WLD/USD",
                                 heartbeat: 60, // 60 seconds
-                                updateThreshold: BIP_8D, // 1 bips, 0.01%
+                                updateThreshold: BIP_8D_2_5, // 2.5 bips, 0.025%
                                 earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
-                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n, // 8/10 bips, 0.008%
+                                earlyUpdateThreshold: (BIP_8D_2_5 * 8n) / 10n, // 8/10 bips, 0.008%
                             },
                         },
                         {
