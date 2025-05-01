@@ -95,7 +95,7 @@ const config: AdrastiaConfig = {
             oracles: [
                 {
                     type: "chainlink-data-streams",
-                    address: "0x4dd2886836eB5966dd2F5a223182E7889CD7F8a6", // AdrastiaWorldChainDataStreamsUpdater
+                    address: "0x7f2CC67f056DF576028FE24B6588D60D252d14dC", // AdrastiaWorldChainDataStreamsUpdater
                     tokens: [
                         {
                             address: "0x000362205e10b3a147d02792eccee483dca6c7b44ecce7012cb8c6e0b68b3ae9",
