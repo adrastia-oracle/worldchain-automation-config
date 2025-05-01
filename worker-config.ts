@@ -2,6 +2,7 @@ import { AdrastiaConfig, BatchConfig } from "../../src/config/adrastia-config";
 
 const BIP_8D = 10000n; // 1 basis point in 8 decimal format
 const BIP_8D_10 = BIP_8D * 10n; // 10 basis points in 8 decimal format
+const BIP_8D_50 = BIP_8D * 50n; // 50 basis points in 8 decimal format
 
 const STD_WRITE_DELAY = 4_000; // Workers incrementally push updates with higher gas prices at 4-second intervals (2 blocks)
 
@@ -102,9 +103,9 @@ const config: AdrastiaConfig = {
                             extra: {
                                 desc: "ETH/USD",
                                 heartbeat: 60, // 60 seconds
-                                updateThreshold: BIP_8D, // 1 bips, 0.01%
+                                updateThreshold: BIP_8D_10, // 10 bips, 0.1%
                                 earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
-                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n, // 8/10 bips, 0.008%
+                                earlyUpdateThreshold: (BIP_8D_10 * 8n) / 10n, // 8 bips, 0.08%
                             },
                         },
                         {
@@ -113,9 +114,9 @@ const config: AdrastiaConfig = {
                             extra: {
                                 desc: "BTC/USD",
                                 heartbeat: 60, // 60 seconds
-                                updateThreshold: BIP_8D, // 1 bips, 0.01%
+                                updateThreshold: BIP_8D_10, // 10 bips, 0.1%
                                 earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
-                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n, // 8/10 bips, 0.008%
+                                earlyUpdateThreshold: (BIP_8D_10 * 8n) / 10n, // 8 bips, 0.08%
                             },
                         },
                         {
@@ -124,9 +125,9 @@ const config: AdrastiaConfig = {
                             extra: {
                                 desc: "WLD/USD",
                                 heartbeat: 60, // 60 seconds
-                                updateThreshold: BIP_8D_10, // 10 bips, 0.1%
+                                updateThreshold: BIP_8D_50, // 50 bips, 0.5%
                                 earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
-                                earlyUpdateThreshold: (BIP_8D_10 * 8n) / 10n, // 8 bips, 0.08%
+                                earlyUpdateThreshold: (BIP_8D_50 * 8n) / 10n, // 40 bips, 0.4%
                             },
                         },
                         {
