@@ -13,8 +13,8 @@ const workerIndex = parseInt(process.env.ADRASTIA_WORKER_INDEX ?? "1");
 const WORLDCHAIN_UPTIME_WEBHOOK_URL = process.env.WORLDCHAIN_UPTIME_WEBHOOK_URL;
 
 const STANDARD_BATCH_CONFIG: BatchConfig = {
-    // Every node polls every 10ms
-    pollingInterval: 10,
+    // Every node polls every 100ms
+    pollingInterval: 100,
     writeDelay: STD_WRITE_DELAY * (workerIndex - 1),
     logging: [
         process.env.DD_AGENT_LOGGING_ENABLED === "true"
