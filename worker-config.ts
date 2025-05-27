@@ -61,10 +61,10 @@ const config: AdrastiaConfig = {
                     baseFeeMultiplierDivisor: 100n,
                     // Minimum priority fee of 250 wei
                     minPriorityFee: 250n,
+                    // Priority fee is incrementally scaled based on worker index
+                    priorityFeeMultiplierDividend: 150n + BigInt(workerIndex - 1) * 50n,
+                    priorityFeeMultiplierDivisor: 100n,
                 },
-                // Gas prices are incrementally scaled based on worker index
-                gasPriceMultiplierDividend: 125n + BigInt(workerIndex - 1) * 50n,
-                gasPriceMultiplierDivisor: 100n,
                 // Check for tx confirmations every 500ms on the primary and 1s on the others
                 confirmationPollingInterval: workerIndex === 1 ? 500 : 1_000,
                 // Wait up to 6 seconds for tx confirmations
