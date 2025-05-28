@@ -143,6 +143,28 @@ const config: AdrastiaConfig = {
                                 earlyUpdateThreshold: (BIP_8D * 8n) / 10n,
                             },
                         },
+                        {
+                            address: "0x0003b778d3f6b2ac4991302b89cb313f99a42467d6c9c5f96f57c29c0d2bc24f",
+                            batch: 0,
+                            extra: {
+                                desc: "SOL/USD",
+                                heartbeat: 60, // 60 seconds
+                                updateThreshold: BIP_8D,
+                                earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
+                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n,
+                            },
+                        },
+                        {
+                            address: "0x0003c16c6aed42294f5cb4741f6e59ba2d728f0eae2eb9e6d3f555808c59fc45",
+                            batch: 0,
+                            extra: {
+                                desc: "XRP/USD",
+                                heartbeat: 60, // 60 seconds
+                                updateThreshold: BIP_8D,
+                                earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
+                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n,
+                            },
+                        },
                     ],
                 },
             ],
