@@ -49,6 +49,7 @@ const config: AdrastiaConfig = {
     httpCacheSeconds: 0, // Unused
     chains: {
         worldChain: {
+            blockTime: 2_000,
             txConfig: {
                 transactionTimeout: STD_WRITE_DELAY * 2,
                 txType: 2,
