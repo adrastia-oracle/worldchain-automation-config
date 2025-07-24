@@ -93,6 +93,11 @@ const config: AdrastiaConfig = {
                 0: {
                     ...STANDARD_BATCH_CONFIG,
                     batchId: "0-chainlink-data-streams",
+                    clockSkew: {
+                        minRecords: 3, // at least 3 records for clock skew estimation
+                        maxRecords: 11, // up to 11 records for clock skew estimation
+                        maxAge: 2 * 60 * 1000, // Only measure clock skew with records that are less than 2 minutes old
+                    },
                 },
             },
             oracles: [
