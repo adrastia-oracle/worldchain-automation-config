@@ -182,6 +182,17 @@ const config: AdrastiaConfig = {
                                 earlyUpdateThreshold: (BIP_8D * 8n) / 10n,
                             },
                         },
+                        {
+                            address: "0x0007c129e624689953a2636c014531b2f0bd0c15f9a22211f53023354f309fa6",
+                            batch: 0,
+                            extra: {
+                                desc: "WSRUSD/RUSD",
+                                heartbeat: 60, // 60 seconds
+                                updateThreshold: BIP_8D,
+                                earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
+                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n,
+                            },
+                        },
                     ],
                 },
             ],
