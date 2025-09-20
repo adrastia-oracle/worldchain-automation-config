@@ -72,7 +72,7 @@ const config: RegistryConfigChainlinkDataStreamsEvm = {
             "0-chainlink-data-streams": {
                 workDefinition: {
                     checkParams: {
-                        target: "0x493D4Cf6ADE33219e131e9117b98389CB85a102D",
+                        target: "0xe92ea17a074643326c8B5F11f579997eABfcD428", // AdrastiaWorldChainDataStreamsUpdater
                         executionDelay: 0,
                         feeds: [
                             {
