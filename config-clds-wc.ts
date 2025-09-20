@@ -58,10 +58,10 @@ const config: RegistryConfigChainlinkDataStreamsEvm = {
     multicallAddress: "0xcA11bde05977b3631167028862bE2a173976CA11",
     chainlinkDataStreams: {
         endpoint: {
-            hostname: process.env.CHAINLINK_DATASTREAMS_TESTNET_REST_HOSTNAME,
-            wsHostname: process.env.CHAINLINK_DATASTREAMS_TESTNET_WS_HOSTNAME,
-            clientId: process.env.CHAINLINK_DATASTREAMS_TESTNET_CLIENT_ID,
-            clientSecret: process.env.CHAINLINK_DATASTREAMS_TESTNET_CLIENT_SECRET,
+            hostname: process.env.CHAINLINK_DATASTREAMS_MAINNET_REST_HOSTNAME,
+            wsHostname: process.env.CHAINLINK_DATASTREAMS_MAINNET_WS_HOSTNAME,
+            clientId: process.env.CHAINLINK_DATASTREAMS_MAINNET_CLIENT_ID,
+            clientSecret: process.env.CHAINLINK_DATASTREAMS_MAINNET_CLIENT_SECRET,
         },
     },
     uptime: {
