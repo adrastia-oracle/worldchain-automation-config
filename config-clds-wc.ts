@@ -139,6 +139,14 @@ const config: RegistryConfigChainlinkDataStreamsEvm = {
                                 earlyHeartbeat: 60 - 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
                                 earlyUpdateThreshold: (BIP_8D * 8n) / 10n,
                             },
+                            {
+                                feedId: "0x0003a7897feec498d6476f464a165ef4012fdfbba740115381e0761b45ee9e7c",
+                                desc: "deUSD/USD",
+                                heartbeat: 60, // 60 seconds
+                                updateThreshold: BIP_8D,
+                                earlyHeartbeat: 60 - 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
+                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n,
+                            },
                         ],
                     },
                     executionParams: {
