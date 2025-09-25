@@ -199,9 +199,9 @@ const config: AdrastiaConfig = {
                             extra: {
                                 desc: "deUSD/USD",
                                 heartbeat: 60, // 60 seconds
-                                updateThreshold: BIP_8D,
+                                updateThreshold: BIP_8D_10,
                                 earlyUpdateTime: 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
-                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n,
+                                earlyUpdateThreshold: (BIP_8D_10 * 8n) / 10n,
                             },
                         },
                     ],

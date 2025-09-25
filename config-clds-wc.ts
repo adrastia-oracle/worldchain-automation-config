@@ -1,4 +1,8 @@
 const BIP_8D = 10000n; // 1 basis point in 8 decimal format
+const BIP_8D_5 = BIP_8D * 5n; // 5 basis points in 8 decimal format
+const BIP_8D_10 = BIP_8D * 10n; // 10 basis points in 8 decimal format
+const BIP_8D_25 = BIP_8D * 25n; // 25 basis points in 8 decimal format
+const BIP_8D_50 = BIP_8D * 50n; // 50 basis points in 8 decimal format
 
 const STD_WRITE_DELAY = 6_000; // Workers incrementally push updates with higher gas prices at 6-second intervals (3 blocks)
 
@@ -143,9 +147,9 @@ const config: RegistryConfigChainlinkDataStreamsEvm = {
                                 feedId: "0x0003a7897feec498d6476f464a165ef4012fdfbba740115381e0761b45ee9e7c",
                                 desc: "deUSD/USD",
                                 heartbeat: 60, // 60 seconds
-                                updateThreshold: BIP_8D,
+                                updateThreshold: BIP_8D_10,
                                 earlyHeartbeat: 60 - 8, // Up to 8 seconds early; enough time to ensure the primary handles the majority of updates
-                                earlyUpdateThreshold: (BIP_8D * 8n) / 10n,
+                                earlyUpdateThreshold: (BIP_8D_10 * 8n) / 10n,
                             },
                         ],
                     },
