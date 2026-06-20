@@ -16,10 +16,17 @@ const config: RegistryConfigChainlinkDataStreamsEvm = {
     type: "chainlink-data-streams-evm",
     network: {
         type: "evm",
+        subType: "l2-op",
         chainId: 480,
         name: "worldChain",
         shortname: "wc",
         blockTime: 2000, // 2000ms
+        blockTimeVariance: 500, // 500ms
+        nativeCurrency: {
+            name: "Ether",
+            symbol: "ETH",
+            decimals: 18,
+        },
     },
     reportingOverride: {
         customerId: "worldchain",
