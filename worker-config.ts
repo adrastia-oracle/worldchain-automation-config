@@ -39,6 +39,24 @@ const STANDARD_BATCH_CONFIG: BatchConfig = {
               }
             : undefined,
     ],
+    loggingRateLimits: {
+        [300_001]: {
+            timeWindow: 1_000, // 1 second
+            maxLogs: 1,
+        },
+        [300_002]: {
+            timeWindow: 1_000, // 1 second
+            maxLogs: 1,
+        },
+        [300_003]: {
+            timeWindow: 1_000, // 1 second
+            maxLogs: 1,
+        },
+        [300_004]: {
+            timeWindow: 1_000, // 1 second
+            maxLogs: 1,
+        },
+    },
     customerId: "worldchain",
     type: "chainlink-data-streams",
 };

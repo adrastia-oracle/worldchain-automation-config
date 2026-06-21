@@ -31,6 +31,26 @@ const config: RegistryConfigChainlinkDataStreamsEvm = {
     reportingOverride: {
         customerId: "worldchain",
     },
+    logging: {
+        rateLimits: {
+            [300_001]: {
+                timeWindow: 1_000, // 1 second
+                maxLogs: 1,
+            },
+            [300_002]: {
+                timeWindow: 1_000, // 1 second
+                maxLogs: 1,
+            },
+            [300_003]: {
+                timeWindow: 1_000, // 1 second
+                maxLogs: 1,
+            },
+            [300_004]: {
+                timeWindow: 1_000, // 1 second
+                maxLogs: 1,
+            },
+        },
+    },
     clockSkewConfig: {
         minRecords: 3, // at least 3 records for clock skew estimation
         maxRecords: 11, // up to 11 records for clock skew estimation
