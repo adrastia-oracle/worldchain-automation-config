@@ -57,7 +57,8 @@ const config: RegistryConfigChainlinkDataStreamsEvm = {
         maxAge: 2 * 60 * 1000, // Only measure clock skew with records that are less than 2 minutes old
     },
     pollingInterval: 100, // 100ms
-    onchainCacheTtl: workerIndex <= 2 ? 500 : workerIndex === 3 ? 1000 : 2000,
+    // Workers use WS to listen to AnswerUpdated events, so we don't need to poll for new data as often.
+    onchainCacheTtl: 30_000,
     instance: instance,
     updateDelay: STD_WRITE_DELAY * (workerIndex - 1),
     txConfig: {
@@ -87,6 +88,7 @@ const config: RegistryConfigChainlinkDataStreamsEvm = {
         opGasPriceOracle: "0x420000000000000000000000000000000000000F", // Used for L1 fee calculation
     },
     multicallAddress: "0xcA11bde05977b3631167028862bE2a173976CA11",
+    wsUrl: process.env.WORLDCHAIN_RPC_WS_URL as `wss://${string}` | undefined,
     chainlinkDataStreams: {
         endpoint: {
             hostname: process.env.CHAINLINK_DATASTREAMS_MAINNET_REST_HOSTNAME,
