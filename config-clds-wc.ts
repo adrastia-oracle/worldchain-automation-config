@@ -51,11 +51,11 @@ const config: RegistryConfigChainlinkDataStreamsEvm = {
             },
         },
     },
-    clockSkewConfig: {
-        minRecords: 3, // at least 3 records for clock skew estimation
-        maxRecords: 11, // up to 11 records for clock skew estimation
-        maxAge: 2 * 60 * 1000, // Only measure clock skew with records that are less than 2 minutes old
-    },
+    // clockSkewConfig: {
+    //     minRecords: 3, // at least 3 records for clock skew estimation
+    //     maxRecords: 11, // up to 11 records for clock skew estimation
+    //     maxAge: 2 * 60 * 1000, // Only measure clock skew with records that are less than 2 minutes old
+    // },
     pollingInterval: 100, // 100ms
     // Workers use WS to listen to AnswerUpdated events, so we don't need to poll for new data as often.
     onchainCacheTtl: 30_000,
